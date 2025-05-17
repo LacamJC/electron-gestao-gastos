@@ -1,16 +1,1 @@
-[
-  {
-    "id": 1,
-    "categoria": "alimentacao",
-    "descricao": "Mercado",
-    "valor": 230,
-    "data": "2005-02-02"
-  },
-  {
-    "id": 2,
-    "categoria": "transporte",
-    "descricao": "Uber",
-    "valor": 2000,
-    "data": "2024-02-19"
-  }
-]
+[]

@@ -38,7 +38,7 @@ const adicionarGasto = () => {
     window.gastosAPI.salvar(gastos);
     carregarGastos();
 
-    window.href= 'index.html';
+    window.href = 'index.html';
 }
 
 function removerGasto(indice) {
@@ -48,4 +48,22 @@ function removerGasto(indice) {
     carregarGastos();
 }
 
-window.onload = carregarGastos;
+window.gastosAPI.obterCategorias();
+
+const buscarCategorias = () => {
+    var categorias = window.gastosAPI.obterCategorias();
+    const accordion = document.getElementById('categoria')
+    categorias.forEach(item => {
+        accordion.innerHTML += `
+        <option value="${item.nome}">${item.nome}</option>
+        `
+    })
+    console.log(categorias)
+}
+
+const effect = () => {
+    carregarGastos();
+    buscarCategorias();
+}
+
+window.onload = effect;
