@@ -5,13 +5,18 @@ const path = require('path');
 const caminhoArquivo = path.join(__dirname, '..', 'database', 'gastos.json');
 
 
-function lerGastos() {
+const lerGastos = () => {
     if (!fs.existsSync(caminhoArquivo)) return [];
     const dados = fs.readFileSync(caminhoArquivo);
     return JSON.parse(dados);
 }
 
-function salvarGastos(gastos) {
+const lerCategorias = () => {
+    const categorias = fs.readFileSync(caminhoArquivo)
+    console.log(categorias)
+}
+lerCategorias()
+const salvarGastos = (gastos) => {
     try {
         const dir = path.dirname(caminhoArquivo);
         if (!fs.existsSync(dir)) {
@@ -24,7 +29,9 @@ function salvarGastos(gastos) {
 }
 
 
+
+
 contextBridge.exposeInMainWorld('gastosAPI', {
-  obter: lerGastos,
-  salvar: salvarGastos
+    obter: lerGastos,
+    salvar: salvarGastos
 });
