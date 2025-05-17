@@ -9,6 +9,7 @@ const carregarGastos = () => {
 
         const linha = `
             <tr>
+                <td>${gasto.categoria}</td>
                 <td>${gasto.descricao}</td>
                 <td>R$: ${gasto.valor.toFixed(2)}</td>
                 <td>${gasto.data}</td>
@@ -25,6 +26,7 @@ const carregarGastos = () => {
 const gerarId = (gastos) => gastos.length ? Math.max(...gastos.map(g => g.id || 0)) + 1 : 1;
 
 const adicionarGasto = () => {
+    const categoria = document.getElementById('categoria').value;
     const descricao = document.getElementById('descricao').value;
     const valor = parseFloat(document.getElementById('valor').value);
     const data = document.getElementById('data').value;
@@ -32,9 +34,11 @@ const adicionarGasto = () => {
     if (!descricao || isNaN(valor) || !data) return alert('Preencha todos os campos');
 
     const gastos = window.gastosAPI.obter();
-    gastos.push({ id: gerarId(gastos), descricao, valor, data });
+    gastos.push({ id: gerarId(gastos), categoria, descricao, valor, data });
     window.gastosAPI.salvar(gastos);
     carregarGastos();
+
+    window.href= 'index.html';
 }
 
 function removerGasto(indice) {

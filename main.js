@@ -6,7 +6,7 @@ function createWindow() {
     width: 1000,
     height: 800,
     webPreferences: {
-    //   contextIsolation: true,;
+      contextIsolation: true,
       nodeIntegration: true,
       preload: path.join(__dirname, 'src','preload.js'), // <- caminho correto
     },

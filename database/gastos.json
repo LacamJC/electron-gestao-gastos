@@ -1,14 +1,16 @@
 [
   {
     "id": 1,
+    "categoria": "alimentacao",
     "descricao": "Mercado",
-    "valor": 123,
-    "data": "2025-05-28"
+    "valor": 230,
+    "data": "2005-02-02"
   },
   {
     "id": 2,
-    "descricao": "asdas",
-    "valor": 23,
-    "data": "2025-05-22"
+    "categoria": "transporte",
+    "descricao": "Uber",
+    "valor": 2000,
+    "data": "2024-02-19"
   }
 ]
