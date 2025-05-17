@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "descricao": "Mercado",
+    "valor": 123,
+    "data": "2025-05-28"
+  },
+  {
+    "id": 2,
+    "descricao": "asdas",
+    "valor": 23,
+    "data": "2025-05-22"
+  }
+]
